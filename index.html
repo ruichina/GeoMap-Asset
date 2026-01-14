@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>企业级图形资产 management 平台</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- CesiumJS Assets -->
+    <link href="https://cdn.jsdelivr.net/npm/cesium@1.114.0/Build/Cesium/Widgets/widgets.css" rel="stylesheet">
+    <script>
+      /**
+       * CRITICAL: window.CESIUM_BASE_URL must be an absolute URL for Workers to resolve scripts correctly.
+       * We set it here globally to be used by all pages.
+       */
+      window.CESIUM_BASE_URL = 'https://cdn.jsdelivr.net/npm/cesium@1.114.0/Build/Cesium/';
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/cesium@1.114.0/Build/Cesium/Cesium.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body { 
+          font-family: 'Inter', "Microsoft YaHei", sans-serif; 
+          background-color: #f8fafc;
+          min-height: 100vh;
+          margin: 0;
+          overflow: hidden;
+        }
+
+        #root { height: 100vh; }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #e2e8f0; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #cbd5e1; }
+
+        /* Unified Cesium UI hiding and styling */
+        .cesium-viewer-bottom { display: none !important; }
+        .cesium-viewer-geocoderContainer { display: none !important; }
+        .cesium-viewer { border-radius: inherit; overflow: hidden; background: #000; }
+        
+        .cesium-baseLayerPicker-dropDown { 
+          background: rgba(15, 23, 42, 0.95) !important; 
+          backdrop-filter: blur(16px); 
+          border: 1px solid rgba(255,255,255,0.1); 
+          border-radius: 24px;
+          padding: 16px;
+          bottom: 45px;
+          color: #f8fafc;
+          box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .fade-in { animation: fadeIn 0.5s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 10px; }
+        
+        @keyframes slideLeft {
+          from { transform: translateX(100%); opacity: 0; }
+          to { transform: translateX(0); opacity: 1; }
+        }
+        .animate-slideLeft { animation: slideLeft 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.34.0"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>

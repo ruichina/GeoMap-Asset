@@ -1,0 +1,9 @@
+{
+  "name": "Copy of 0114GeoMap Asset-图形资产管理",
+  "description": "",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ]
+}
